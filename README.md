@@ -25,7 +25,7 @@ print(deposit(230, 20))
 # 4600
 ```
 
-But what if you earned money every month or year that you keep that money invested? The computations below will calculate how much money you would have given three variables:
+But what if you earned money every month or year that you keep that money invested? The computations below will calculate how much money you would have by using three variables:
 
 - an initial `investment`
 - an interest `rate`
