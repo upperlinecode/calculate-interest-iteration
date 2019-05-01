@@ -6,13 +6,24 @@
 > 
 > **Answer:** After the *first* year of the investment, the original $500 will have grown by 10%. Since 10% of $500 = $50, the investment will now be worth $500 + $50 = $550. In the second year, it will grow by an additional 10%, but now the 10% is of $550 = $55. So at the end of two years, the investment will be worth $550 + $55 = $605.
 
-## Iteration: One-Time Investing
+## Iteration: Annual Investing
 
-0. What happens if you deposit $230 into a zero-interest account for 5 years? For 20 years?
+1. Write a function to calculate the balance of a zero-interest account in which you deposit $230 each year for 5 years? For 20 years?
 
-> JOLSON: NOT SURE WHETHER I'M SEEING WHY TO INCLUDE A ZERO-INTEREST ACCOUNT EXCEPT TO MAKE A POINT ABOUT INTEREST GROWTH?
+```python
+def deposit(annual, time):
+	# your code here
+```
 
-**Answer:** After 5 years of earning no interest, the $230 will still be worth $230. In fact, the same is true after 20 years or any other amount of time. Earning interest on money is how you can have money you already own work for you when you're not using it.
+**Answer:** After 5 years of earning no interest, annual additions of $230 would yield 5 x $230 = **$1150**. After 20 years, the amount would be 20 x $230 = **$4600**.
+
+```python
+print(deposit(230, 5))
+# 1150
+
+print(deposit(230, 20))
+# 4600
+```
 
 But what if you earned money every month or year that you keep that money invested? The computations below will calculate how much money you would have given three variables:
 
@@ -20,7 +31,7 @@ But what if you earned money every month or year that you keep that money invest
 - an interest `rate`
 - an amount of `time`
 
-1. Write a function that will help you compute how much money you would have after 1 year if you invest a given amount in an account with a particular annual return.
+2. Write a function that will help you compute how much money you would have after 1 year if you invest a given amount in an account with a particular annual return.
 
 > Note: there's no need for iteration here, but try to use lots of named variables and print functions.
 
@@ -38,7 +49,7 @@ print(invest(632, 6, 1))
 # 669.92
 ```
 
-2. Update the `invest()` function to leverage the `time` parameter in order to calculate the value of an investment growing at a particular annual rate for 10 or more years.
+3. Update the `invest()` function to leverage the `time` parameter in order to calculate the value of an investment growing at a particular annual rate for 10 or more years.
 
 **Example:** After 10 years, an initial $632 investment growing at 6% per year would be worth **$1131.82**.
 
@@ -49,12 +60,12 @@ print(invest(632, 6, 10))
 # 1131.82
 ```
 
-3. Use your `invest()` function to compute the value of:
+4. Use your `invest()` function to compute the value of:
 	1. A $5,000 investment at 3% for 10 years.
 	2. A $10,000 investment at 3% for 5 years. (double the amount, half the time)
 	3. A $2,500 investment at 3% for 20 years. (half the amount, double the time)
 
-4. Use your `invest()` function to compute the value of:
+5. Use your `invest()` function to compute the value of:
 	1. A $4,000 investment at 5% for 30 years.
 	2. A $4,000 investment at 7.5% for 30 years.
 	3. A $4,000 investment at 10% for 30 years.
@@ -71,7 +82,7 @@ Jerome was a bit later to the game. At age 30, he invested $1,000 in the same fu
 
 Z was somewhere in between Clara and Jerome. Z thought about investing when they turned 25 and also invested in the same fund that Clara and Jerome used, earning 5% annually. But Z invested $800 initially, and then planned to add $800 every year for the rest of their life.
 
-5. Who has more money in their account at age 45? At age 50? At age 65?
+6. Who has more money in their account at age 45? At age 50? At age 65?
 
 Update your `invest()` function to account for these two new factors:
 
@@ -88,7 +99,7 @@ Consider the following three types of investment accounts:
 - **Index Funds**: Index funds are investments in a type of mutual fund that bring together several other funds with the goal of matching (or tracking) one of the financial market indexes, e.g. the S&P 500. These funds tend to be less volatile than a given stock, but can still gain or lose money.
 - **Bonds**: Bonds are investments which have a fixed-rate of income over a period of time, and the bond issuer is obligated to pay the amount of the bond at a specified future date, e.g. in 20 years. Bonds tend to have lower yields than stocks or index funds, but they are also very low risk.
 
-6. Create three new functions: `stock()`, `indexFund()`, and `bond()`. Each function should take two inputs, `initial` investment and `time` of the investment.
+7. Create three new functions: `stock()`, `indexFund()`, and `bond()`. Each function should take two inputs, `initial` investment and `time` of the investment.
 
 ```python
 def stock(initial, time):
@@ -112,7 +123,7 @@ How do the three functions compare when given the same `initial` investment and 
 
 Many investments will compound interest monthly instead of annually, however the monthly rate is only 1/12th of the annual rate.
 
-7. Create a new method called `monthly()` that takes three parameters: an `initial` investment, an *annual* interest `rate`, and a length of `time` in years.
+8. Create a new method called `monthly()` that takes three parameters: an `initial` investment, an *annual* interest `rate`, and a length of `time` in years.
 
 > Note: Your function should convert the *annual* interest `rate` into a monthly rate, and the `time` in years to a number of months.
 
@@ -135,7 +146,7 @@ The three students have different strategies for how to pay back their loan:
 - Steve defers making any payments for 5 years, after which he makes payments of $400 per month.
 - Upon graduation, Sid pays $300 per month in an attempt to pay off the loan faster.
 
-8. Compare the three payment strategies to determine how much each graduate will end up paying to the loan company.
+9. Compare the three payment strategies to determine how much each graduate will end up paying to the loan company.
 
 Which strategy did you think would be best, and which did you calculate as the most cost-effective?
 
@@ -143,13 +154,13 @@ Which strategy did you think would be best, and which did you calculate as the m
 
 You may not think of credit card debt as taking out a loan, but that's essentially what you're doing. The same interest-bearing types of calculations can be used to calculate how much things cost when bought on credit.
 
-9. Assume your credit card has an *annual* interest rate of 12%. Calculate the *actual* cost of a $1,200 mattress if you pay:
+10. Assume your credit card has an *annual* interest rate of 12%. Calculate the *actual* cost of a $1,200 mattress if you pay:
 
 - $50 per month
 - $100 per month
 - $200 per month
 
-10. Consider the following two debts:
+11. Consider the following two debts:
 
 - You owe a credit card company $2,000 and they charge a 22% annual interest rate.
 - You owe a student loan company $20,000 and they charge a 6% annual interest rate.
