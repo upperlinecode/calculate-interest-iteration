@@ -8,7 +8,7 @@
 
 ## Iteration: Annual Investing
 
-1. Write a function to calculate the balance of a zero-interest account in which you deposit $230 each year. What is the balance after 5 years. After 20 years?
+1. Write a function to calculate the balance of a zero-interest account in which you deposit $230 each year. What is the balance after 5 years? After 20 years?
 
 ```python
 def deposit(annual, time):
